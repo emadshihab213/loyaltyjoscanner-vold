@@ -1,5 +1,5 @@
 export interface LoginRequest {
-  phone: string;
+  emailOrUsername: string;
   password: string;
 }
 
@@ -43,4 +43,40 @@ export interface RedeemResponse {
 export interface ApiError {
   message: string;
   status?: number;
+}
+
+export interface MemberData {
+  id: string;
+  externalId?: string;
+  points: number;
+  status?: number;
+}
+
+export interface GetMemberByBarcodeResponse {
+  success: boolean;
+  data: {
+    memberId: string;
+    programId: string;
+    memberData: MemberData;
+  };
+}
+
+export interface AddPointsResponse {
+  success: boolean;
+  result: {
+    memberId: string;
+    points: number;
+    tierPoints: number;
+    secondaryPoints: number;
+  };
+}
+
+export interface BurnPointsResponse {
+  success: boolean;
+  result: {
+    memberId: string;
+    points: number;
+    tierPoints: number;
+    secondaryPoints: number;
+  };
 }

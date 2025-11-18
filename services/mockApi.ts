@@ -53,8 +53,9 @@ class MockApiService {
 
   async login(credentials: LoginRequest): Promise<LoginResponse> {
     await this.delay(1000); // Simulate network delay
+  const user = credentials.emailOrUsername || '';
 
-    if (credentials.phone === '+1234567890' && credentials.password === 'staff123') {
+  if (user === '+1234567890' && credentials.password === 'staff123') {
       const token = 'mock-jwt-token-' + Date.now();
       this.setToken(token);
       return {

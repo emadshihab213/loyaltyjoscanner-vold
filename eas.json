@@ -1,0 +1,17 @@
+{
+  "cli": { "version": ">= 3.18.0" },
+  "build": {
+    "production": {
+      "android": { "buildType": "app-bundle" },
+      "env": {
+        "EXPO_PUBLIC_API_BASE_URL": "https://r2wm1mmh-8081.inc1.devtunnels.ms/api"
+      }
+    },
+    "apk": {
+      "android": { "buildType": "apk" },
+      "env": {
+        "EXPO_PUBLIC_API_BASE_URL": "https://r2wm1mmh-8081.inc1.devtunnels.ms/api"
+      }
+    }
+  }
+}
